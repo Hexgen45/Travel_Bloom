@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TravelBloom</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="hero">
+    <nav>
+      <div class="logo">✈ TravelBloom</div>
+      <ul>
+        <li><a href="travel_recommendation.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="search-bar">
+        <input type="text" placeholder="Enter a destination or keyword" />
+        <button class="search">Search</button>
+        <button class="clear">Clear</button>
+      </div>
+    </nav>
+
+    <!-- <div class="result-box">
+
+      <div class="result-sec">
+        <img src="kyoto.jpg" alt="img" width="480px" height="300px">
+        <div class="text-sec">
+          <h1>hello</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur natus repudiandae, a quisquam quasi voluptate.</p>
+        </div>
+       </div> 
+        <div class="result-sec">
+        <img src="kyoto.jpg" alt="img" width="480px" height="300px">
+        <div class="text-sec">
+          <h1>hello</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur natus repudiandae, a quisquam quasi voluptate.</p>
+        </div>
+      </div>
+    </div> -->
+      
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <div class="content">
+      <h1>EXPLORE<br>DREAM<br>DESTINATION</h1>
+      <p>It encourages exploration of unfamiliar territories, embracing diverse cultures and landscapes,<br>
+      while pursuing the desired destination that captivates the heart and ignites a sense of wonder.</p>
+      <button class="book-btn">BOOK NOW</button>
+    </div>
+    
+  </div>
+  <div class="details">
+    <h1>DETAILS</h1>
+  </div>
+  <div id="search-results" class="search-results"></div>
+<script>
+document.querySelector(".search").addEventListener("click", async () => {
+  const query = document.querySelector("input[type='text']").value.trim().toLowerCase();
+  const resultsContainer = document.getElementById("search-results");
+  resultsContainer.innerHTML = "";
+
+  if (!query) {
+    alert("Please enter a valid search query.");
+    return;
+  }
+
+  try {
+    const res = await fetch("travel_recommendation.json");
+    const data = await res.json();
+    let matches = [];
+
+    // Search in cities
+    data.countries.forEach(country => {
+      country.cities.forEach(city => {
+        if (city.name.toLowerCase().includes(query)) {
+          matches.push({
+            title: city.name,
+            imageUrl: city.imageUrl,
+            description: city.description
+          });
+        }
+      });
+    });
+
+    // Search in temples
+    data.temples.forEach(temple => {
+      if (temple.name.toLowerCase().includes(query)) {
+        matches.push({
+          title: temple.name,
+          imageUrl: temple.imageUrl,
+          description: temple.description
+        });
+      }
+    });
+
+    // Search in beaches
+    data.beaches.forEach(beach => {
+      if (beach.name.toLowerCase().includes(query)) {
+        matches.push({
+          title: beach.name,
+          imageUrl: beach.imageUrl,
+          description: beach.description
+        });
+      }
+    });
+
+    // Show results
+    if (matches.length === 0) {
+      resultsContainer.innerHTML = "<p style='color:white;'>No results found.</p>";
+    } else {
+      matches.forEach(item => {
+        const card = document.createElement("div");
+        card.classList.add("result-card");
+        card.innerHTML = `
+          <img src="${item.imageUrl}" alt="${item.title}">
+          <h3>${item.title}</h3>
+          <p>${item.description}</p>
+        `;
+        resultsContainer.appendChild(card);
+      });
+    }
+
+  } catch (err) {
+    console.error("Error loading JSON:", err);
+  }
+});
+
+// Clear button
+document.querySelector(".clear").addEventListener("click", () => {
+  document.querySelector("input[type='text']").value = "";
+  document.getElementById("search-results").innerHTML = "";
+});
+</script>
+
+
+</body>
+</html>

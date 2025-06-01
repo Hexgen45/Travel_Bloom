@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.hero {
+  background: url('NY.jpg') no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+  color: white;
+}
+
+/* .down {
+  background: url('NY.jpg') no-repeat center center/cover;
+  height: 100vh;
+} */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+nav .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+}
+
+.search-bar input {
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  width: 250px;
+}
+
+.search-bar button {
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  background-color: #00796b;
+  color: white;
+  cursor: pointer;
+}
+
+.social-icons {
+  position: absolute;
+  top: 40%;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.content {
+  position: absolute;
+  top: 35%;
+  left: 100px;
+  max-width: 600px;
+}
+
+.content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.content p {
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+.book-btn {
+  padding: 10px 25px;
+  font-size: 16px;
+  border: none;
+  background-color: #00796b;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.hero.about {
+  background: url('NY.jpg') no-repeat center center/cover;
+}
+
+.about-text {
+  max-width: 800px;
+}
+
+.about-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 25px;
+  border-radius: 10px;
+}
+
+
+.hero.contact {
+  background: url('NY.jpg') no-repeat center center/cover;
+}
+
+.contact-form-container {
+  position: absolute;
+  top: 30%;
+  left: 100px;
+  max-width: 600px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 10px;
+  color: white;
+}
+
+.contact-form-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 10px 25px;
+  background-color: #00796b;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hero.about {
+  background: url('NY.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+}
+
+.about-content {
+  position: absolute;
+  top: 25%;
+  left: 100px;
+  max-width: 900px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.about-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.team-section {
+  margin-top: 50px;
+}
+
+.team-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.team-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(5px);
+}
+
+.team-member img {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.team-member h3 {
+  font-size: 1.3rem;
+  margin: 10px 0;
+}
+
+.team-member p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.team-member .role {
+  background-color: #3b82f6;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+.result-sec {
+  position: absolute;
+  background-color: rgba(240, 248, 255, 0.253);
+  top: 120px;
+  /* left: 850px; */
+  right: 0;
+  z-index: 1000px;
+  width: 500px;
+  border-radius: 20px;
+  padding: 10px;
+  margin-right:10px;
+}
+
+.text-sec {
+  padding: 15px;
+}
+
+.result-sec img {
+  border-radius: 20px;
+}
+
+
+/*  */
+
+.search-results {
+  position: absolute;
+  top: 150px;
+  right: 20px;
+  z-index: 999;
+  width: 300px;
+}
+
+.result-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.result-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.result-card h3 {
+  margin: 5px 0;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.result-card p {
+  font-size: 0.95em;
+  color: #666;
+}
+
+.details {
+  /* width: 100vw; */
+  height: 100vh;
+  /* background-color: #005279f2; */
+  background: url('New.jpeg') no-repeat center center/cover;
+}
+
+.details h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  line-height: 2.9;
+}
