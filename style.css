@@ -179,18 +179,18 @@ nav ul li a {
 
 .about-content {
   position: absolute;
-  top: 25%;
+  top: 15%;
   left: 100px;
   max-width: 900px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 40px;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0px 0px 0px 40px;
   border-radius: 10px;
 }
 
 .about-content h1 {
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .about-content p {
@@ -204,7 +204,7 @@ nav ul li a {
 
 .team-section h2 {
   font-size: 2.5rem;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   color: white;
 }
 
